@@ -1,0 +1,24 @@
+﻿
+
+---------------------------------------------------------------
+- Server Name : 
+
+- Server Db Name : db7073.databaseasp.net
+
+- Server Login Name :  db7073
+
+- Server Db Password : e-2PBn=75Sx#
+
+
+-----------------------------------------------------------------------------------------
+
+ Set the token in a cookie
+Response.Cookies.Append("AuthToken", token, new CookieOptions
+{
+    HttpOnly = true,
+    SameSite = SameSiteMode.Strict,
+    Expires = DateTime.UtcNow.AddHours(1) // Set the expiration time for the cookie
+});
+
+Add the token to the response headers
+Response.Headers.Add("Authorization", "Bearer " + token);
