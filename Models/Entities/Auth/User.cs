@@ -5,18 +5,12 @@ namespace Models.Entities.Auth
 {
     public class User : BaseEntity
     {
-        public string EnglishUserName { get; set; } = string.Empty;
-        public string ArabicUserName { get; set; } = string.Empty;
-        public string PhoneNumber { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
-        public string Password { get; set; } = string.Empty;
-        public bool EmailConfirmed { get; set; }
-        public bool PhoneNumberConfirmed { get; set; }
+        public string UserName { get; set; };
+        public string HashPassword { get; set; };
+        public string Salt { get; set; };
         // Photo
-        public string Avatar { get; set; } = string.Empty;
+        //public string Avatar { get; set; } = string.Empty;
         public DateTime CreatedAt { get; set; }
-        public DateTime BirthDate { get; set; }
-        public DateTime LastLoginDate { get; set; }
         public bool IsActive { get; set; }
 
         // for lock out 
